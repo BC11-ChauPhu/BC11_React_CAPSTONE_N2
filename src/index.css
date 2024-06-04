@@ -1,7 +1,7 @@
 body {
   font-family: "Roboto Condensed", sans-serif;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
   box-sizing: border-box;
@@ -23,7 +23,6 @@ a:hover {
 }
 
 .title {
-  font-size: 1.125rem;
   text-transform: uppercase;
   margin-bottom: 40px;
   letter-spacing: 3px;
@@ -174,4 +173,101 @@ a:hover {
 #showingMovies {
   background-color: black;
   padding: 75px 0;
+  color: white;
+}
+
+#showingMovies .carousel-control-prev {
+  left: -10%;
+}
+
+#showingMovies .carousel-control-next {
+  right: -10%;
+}
+
+.showingMovie-wrapper {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.showingMovie-img {
+  height: 600px;
+}
+
+.showingMovie-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.showingMovie-name {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  color: #ec7532;
+  position: relative;
+}
+
+#comingSoon {
+  background-color: black;
+  padding: 75px 0;
+  color: white;
+}
+
+.comingSoon-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.comingSoon-img {
+  height: 250px;
+}
+
+.comingSoon-img img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#homeCinema {
+  padding: 75px 0;
+}
+
+.homeCinema-content {
+  padding: 10px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 20% 80%
+}
+
+.logo-list {
+  border-right: 1px solid rgba(0, 0, 0, .2)
+}
+
+.logo-item {
+  height: 100px;
+  width: 100px;
+  margin: 20px auto;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: .5s all;
+}
+
+.logo-item:first-of-type {
+  margin-top: 0;
+}
+
+.logo-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.logo-item.active {
+  opacity: 1;
+}
+
+.logo-item img {
+  height: 100%;
+  width: 100%;
 }

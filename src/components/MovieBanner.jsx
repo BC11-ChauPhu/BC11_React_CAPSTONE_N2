@@ -15,7 +15,6 @@ const MovieBanner = () => {
             })
     }, [])
 
-    console.log(movie)
     return (
         <section id="movieBanner">
             <div id="MovieBanner" className="carousel slide" data-ride="carousel">
