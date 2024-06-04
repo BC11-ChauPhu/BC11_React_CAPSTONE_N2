@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { http } from '../services/config'
+import CinemaScreeningDetail from './CinemaScreeningDetail'
 
 const Cinemas = () => {
   const [cinema, setCinema] = useState([])
@@ -50,9 +51,7 @@ const Cinemas = () => {
             })
             }
           </div>
-          <div className="cinema-item">
-
-          </div>
+          <CinemaScreeningDetail maHeThongRap={state} />
         </div>
       </div>
     </section>

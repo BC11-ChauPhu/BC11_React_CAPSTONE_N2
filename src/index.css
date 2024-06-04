@@ -236,14 +236,16 @@ a:hover {
 }
 
 .homeCinema-content {
-  padding: 10px;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, .2);
   display: grid;
-  grid-template-columns: 20% 80%
+  grid-template-columns: 20% 80%;
+  height: 750px;
+
 }
 
 .logo-list {
-  border-right: 1px solid rgba(0, 0, 0, .2)
+  border-right: 1px solid rgba(0, 0, 0, .2);
+  padding: 20px 0;
 }
 
 .logo-item {
@@ -271,3 +273,46 @@ a:hover {
   height: 100%;
   width: 100%;
 }
+
+.cinemaScreeningDetail {
+  height: inherit;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  justify-content: space-between;
+  
+}
+
+.cinema-address {
+  display: grid;
+  height: inherit;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.cinema-address img {
+  height: 100%;
+  width: 100%;
+}
+
+.cinema-address-item {
+  /* height: 150px; */
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.cinema-address-item:first-of-type {
+  padding-top: 0;
+}
+
+.cinema-address-item:last-of-type {
+  padding-bottom: 0;
+  border: none;
+}
+
+.cinema-info {
+  margin-left: 20px;
+}
+
+
