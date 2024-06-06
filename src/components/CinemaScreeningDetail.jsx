@@ -14,6 +14,27 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
             })
     }, [])
 
+    const setActive = (e) => {
+        const closestItem = e.target.closest('.cinema-address-item')
+        const className = closestItem.className.replace(/\s/g, '')
+        if (className === 'cinema-address-item') {
+            document.querySelectorAll('.cinema-address-item').forEach((item) => {
+                item.classList.remove('active')
+            })
+            closestItem.classList.add('active')
+            setState(closestItem.id)
+        }
+    }
+
+    const [state, setState] = useState([])
+    useEffect(() => {
+        address?.map((item, index) => {
+            if (item.maHeThongRap === maHeThongRap) {
+                setState(item.lstCumRap[0].maCumRap)
+            }
+        })
+    })
+
     return (
         <div className='cinemaScreeningDetail'>
             <div className="cinema-address">
@@ -22,11 +43,11 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                         return item.lstCumRap?.map((item, index) => {
                             console.log(item)
                             return (
-                                <div className={`cinema-address-item ${index === 0 ? 'active' : ''}`}>
-                                    <div className="cinema-img">
+                                <div id={item.maCumRap} className={`cinema-address-item ${index === 0 ? 'active' : ''}`} onClick={setActive}>
+                                    <div className="cinema-img" onClick={setActive}>
                                         <img src={item.hinhAnh} alt="" />
                                     </div>
-                                    <div className="cinema-info">
+                                    <div className="cinema-info" onClick={setActive}>
                                         <p>{item.diaChi}</p>
                                     </div>
                                 </div>
@@ -35,7 +56,6 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                     }
                 })}
             </div>
-            <div className="cinema-address-movie"></div>
         </div>
     )
 }

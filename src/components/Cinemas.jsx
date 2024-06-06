@@ -27,6 +27,7 @@ const Cinemas = () => {
         item.classList.remove('active')
       })
       closestLogoItem.classList.add('active')
+      setStatus(closestLogoItem.id)
     }
   }
   return (
