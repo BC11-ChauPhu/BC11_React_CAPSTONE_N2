@@ -22,15 +22,15 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                 item.classList.remove('active')
             })
             closestItem.classList.add('active')
-            setState(closestItem.id)
+            setMaCumrap(closestItem.id)
         }
     }
 
-    const [state, setState] = useState([])
+    const [maCumRap, setMaCumrap] = useState([])
     useEffect(() => {
         address?.map((item, index) => {
             if (item.maHeThongRap === maHeThongRap) {
-                setState(item.lstCumRap[0].maCumRap)
+                setMaCumrap(item.lstCumRap[0].maCumRap)
             }
         })
     })
@@ -41,7 +41,6 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                 {address?.map((item, index) => {
                     if (item.maHeThongRap === maHeThongRap) {
                         return item.lstCumRap?.map((item, index) => {
-                            console.log(item)
                             return (
                                 <div id={item.maCumRap} className={`cinema-address-item ${index === 0 ? 'active' : ''}`} onClick={setActive}>
                                     <div className="cinema-img" onClick={setActive}>
@@ -52,6 +51,29 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                                     </div>
                                 </div>
                             )
+                        })
+                    }
+                })}
+            </div>
+            <div className="movieByCinemaBranches">
+                {address?.map((item, index) => {
+                    if (item.maHeThongRap === maHeThongRap) {
+                        return item.lstCumRap?.map((item, index) => {
+                            if (item.maCumRap === maCumRap) {
+                                return item.danhSachPhim?.map((item, index) => {
+                                    console.log(item)
+                                    return (
+                                        <div className="movieByCinemaBranches-item">
+                                            <div className="movieByCinemaBranches-item-img">
+                                                <img src={item.hinhAnh} alt="" />
+                                            </div>
+                                            <div className="movieByCinemaBranches-item-info">
+                                                <p>{item.tenPhim}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         })
                     }
                 })}
