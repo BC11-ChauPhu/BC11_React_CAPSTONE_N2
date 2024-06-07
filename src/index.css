@@ -346,6 +346,9 @@ a:hover {
   border-radius: 8px;
 }
 
-/* .movieByCinemaBranches-item-info {
-
-} */
+.movieByCinemaBranches-movieName {
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  color: #ec7532;
+  position: relative;
+}
