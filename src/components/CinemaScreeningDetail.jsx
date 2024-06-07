@@ -26,14 +26,22 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
         }
     }
 
+
     const [maCumRap, setMaCumrap] = useState([])
     useEffect(() => {
-        address?.map((item, index) => {
-            if (item.maHeThongRap === maHeThongRap) {
-                setMaCumrap(item.lstCumRap[0].maCumRap)
-            }
-        })
-    })
+        if (maHeThongRap && address?.length > 0) {
+            const initalCumRap = address.find((item) => item.maHeThongRap === maHeThongRap)?.lstCumRap[0].maCumRap
+            setMaCumrap(initalCumRap)
+        }
+    }, [address])
+
+    useEffect(() => {
+        if (maHeThongRap && address?.length > 0) {
+            const initalCumRap = address.find((item) => item.maHeThongRap === maHeThongRap)?.lstCumRap[0].maCumRap
+            setMaCumrap(initalCumRap)
+        }
+    }, [maHeThongRap])
+
 
     return (
         <div className='cinemaScreeningDetail'>
@@ -61,7 +69,6 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                         return item.lstCumRap?.map((item, index) => {
                             if (item.maCumRap === maCumRap) {
                                 return item.danhSachPhim?.map((item, index) => {
-                                    console.log(item)
                                     return (
                                         <div className="movieByCinemaBranches-item">
                                             <div className="movieByCinemaBranches-item-img">
