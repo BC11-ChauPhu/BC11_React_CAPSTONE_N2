@@ -352,3 +352,43 @@ a:hover {
   color: #ec7532;
   position: relative;
 }
+
+footer {
+  background-color: black;
+}
+
+footer .row {
+  padding: 75px 0;
+}
+
+footer h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 2px;                
+  color: #ec7532;
+}
+
+footer li a {
+  font-size: 14px;
+  color: white;
+  transition: .5s all;
+}
+
+footer li a:hover {
+  color: #ec7532;
+}
+
+footer li a i {
+  margin-right: 5px;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  padding: 15px 0;
+  color: white
+}
+
+.footer-copyright p {
+  margin: 0;
+}

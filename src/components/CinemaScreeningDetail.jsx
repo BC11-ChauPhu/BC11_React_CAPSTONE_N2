@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useTransition } from 'react'
+import React, { useEffect, useState } from 'react'
 import { http } from '../services/config'
 
 const CinemaScreeningDetail = ({ maHeThongRap }) => {
@@ -69,7 +69,6 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                         return item.lstCumRap?.map((item, index) => {
                             if (item.maCumRap === maCumRap) {
                                 return item.danhSachPhim?.map((item, index) => {
-                                    console.log(item)
                                     return (
                                         <div className="movieByCinemaBranches-item" key={index}>
                                             <div className="movieByCinemaBranches-item-img">
