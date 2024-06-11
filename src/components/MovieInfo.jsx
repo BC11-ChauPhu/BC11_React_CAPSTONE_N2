@@ -22,30 +22,74 @@ const MovieInfo = () => {
             .get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`)
             .then((res) => {
                 setInfo(res.data.content)
-                console.log(res.data.content)
             })
             .catch((err) => {
                 console.log(err)
             })
     }, [])
+
+
+    const [state, setState] = useState([])
+    useEffect(() => {
+        if (info.heThongRapChieu?.length > 0) {
+            setState(info.heThongRapChieu[0].maHeThongRap)
+        }
+    }, [info])
+    const setActive = (e) => {
+        const closestLogoItem = e.target.closest('.logo-item')
+        const className = closestLogoItem.className.replace(/\s/g, '')
+        if (className === 'logo-item') {
+            document.querySelectorAll('.logo-item').forEach((item) => {
+                item.classList.remove('active')
+            })
+            closestLogoItem.classList.add('active')
+            setState(closestLogoItem.id)
+        }
+    }
     return (
         <div id='movieDetail'>
             <div className="container">
                 <div className="movieDetail-content">
-                    <img src={movie.hinhAnh} alt="" />
-                    <div>
+                    <div className="movieDetail-img">
+                        <img src={movie.hinhAnh} alt="" />
+                    </div>
+                    <div className='movieDetail-info'>
                         <div>
                             <h2 className='movieDetail-name'>{movie.tenPhim}</h2>
                             <p>{movie.moTa}</p>
                             <p>Ratings: {movie.danhGia}</p>
                         </div>
-                        <div>
+                        <h3>showtimes</h3>
+                        <div className='movieDetail-cinemas'>
+                            <div className="logo-list">
+                                {info.heThongRapChieu?.map((item, index) => {
+                                    return (
+                                        <div id={item.maHeThongRap} className={`logo-item ${item.maHeThongRap === state ? 'active' : ''}`} onClick={setActive}>
+                                            <img src={item.logo} alt="" />
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <div className="movieDetail-showtimes">
+                                {info.heThongRapChieu?.map((item, index) => {
+                                    if (item.maHeThongRap === state) {
+                                        console.log(item)
+                                        return item.cumRapChieu?.map((item, index) => {
+                                            return (
+                                                <div>
+                                                    <img src={item.hinhAnh} alt="" />
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-        </div>  
+        </div>
     )
 }
 

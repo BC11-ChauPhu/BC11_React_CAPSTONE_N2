@@ -279,7 +279,7 @@ a:hover {
   display: grid;
   grid-template-columns: 40% 60%;
   justify-content: space-between;
-  
+
 }
 
 .cinema-address {
@@ -325,15 +325,13 @@ a:hover {
   overflow-y: scroll;
   padding: 20px;
   display: grid;
-  gap: 20px
-  ;
+  gap: 20px;
 }
 
 .movieByCinemaBranches-item {
   display: grid;
   grid-template-columns: 40% 60%;
-  gap: 20px
-  ;
+  gap: 20px;
 }
 
 .movieByCinemaBranches-item-img {
@@ -365,7 +363,7 @@ footer h3 {
   font-size: 18px;
   text-transform: uppercase;
   margin-bottom: 15px;
-  letter-spacing: 2px;                
+  letter-spacing: 2px;
   color: #ec7532;
 }
 
@@ -395,13 +393,19 @@ footer li a i {
 
 #movieDetail {
   padding: 75px 0;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(255, 255, 255, 1);
 }
 
 .movieDetail-content {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 35% 60%;
   gap: 20px;
+  justify-content: space-between;
+}
+
+.movieDetail-img {
+  max-height: 700px;
+  max-width: 400px;
 }
 
 .movieDetail-content img {
@@ -410,7 +414,20 @@ footer li a i {
 }
 
 .movieDetail-name {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #ec7532;
   position: relative;
+}
+
+.movieDetail-content h3 {
+  text-transform: uppercase;
+  padding: 40px 0 10px;
+  color: #ec7532;
+  position: relative;
+  border-bottom: 2px solid #ec7532
+}
+
+.movieDetail-cinemas {
+  display: grid;
+  grid-template-columns: 40% 60%;
 }
