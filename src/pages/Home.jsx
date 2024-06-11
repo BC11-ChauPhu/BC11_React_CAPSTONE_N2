@@ -3,7 +3,6 @@ import MovieBanner from '../components/MovieBanner'
 import ShowingMovies from '../components/ShowingMovies'
 import ComingSoon from '../components/ComingSoon'
 import Cinemas from '../components/Cinemas'
-import Footer from '../components/Footer'
 const Home = () => {
   return (
     <>
@@ -11,7 +10,6 @@ const Home = () => {
       <ShowingMovies/>
       <ComingSoon/>
       <Cinemas/>
-      <Footer/>
     </>
   )
 }

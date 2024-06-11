@@ -27,8 +27,8 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="quick-navigation">
-                    <NavLink className='corp-logo'>
-                        <img src='../logo.svg' alt="" />
+                    <NavLink className='corp-logo' to='/home'>
+                        <img src='../logo.svg' alt=""  />
                     </NavLink>
                     <div className="quick-links-list">
                         <ul>

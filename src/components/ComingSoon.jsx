@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { http } from '../services/config'
+import { useNavigate } from 'react-router-dom'
 
 const ComingSoon = () => {
+    const navigate = useNavigate()
     const [movie, setMovie] = useState([])
     useEffect(()=> {
         http
@@ -20,7 +22,9 @@ const ComingSoon = () => {
                 <div className="comingSoon-content">
                     {movie?.map((item, index) => {
                             return (
-                                <div className='comingSoon-img'>
+                                <div className='comingSoon-img' onClick={() => {
+                                    navigate(`/movie-detail/${item.maPhim}`)
+                                }}>
                                     <img src={item.hinhAnh} alt="" />
                                 </div>
                             )

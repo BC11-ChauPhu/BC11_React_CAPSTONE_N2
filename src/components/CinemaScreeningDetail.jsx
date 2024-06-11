@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { http } from '../services/config'
+import { useNavigate } from 'react-router-dom'
 
 const CinemaScreeningDetail = ({ maHeThongRap }) => {
+    const navigate = useNavigate()
+
     const [address, setAddress] = useState([])
     useEffect(() => {
         http
@@ -71,7 +74,9 @@ const CinemaScreeningDetail = ({ maHeThongRap }) => {
                                 return item.danhSachPhim?.map((item, index) => {
                                     return (
                                         <div className="movieByCinemaBranches-item" key={index}>
-                                            <div className="movieByCinemaBranches-item-img">
+                                            <div className="movieByCinemaBranches-item-img" onClick={() => {
+                                                navigate(`/movie-detail/${item.maPhim}`)
+                                            }}>
                                                 <img src={item.hinhAnh} alt="" />
                                             </div>
                                             <div className="movieByCinemaBranches-item-info">

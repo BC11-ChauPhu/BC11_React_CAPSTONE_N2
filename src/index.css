@@ -392,3 +392,25 @@ footer li a i {
 .footer-copyright p {
   margin: 0;
 }
+
+#movieDetail {
+  padding: 75px 0;
+  background: rgba(0, 0, 0, .1);
+}
+
+.movieDetail-content {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 20px;
+}
+
+.movieDetail-content img {
+  width: 100%;
+  height: 100%;
+}
+
+.movieDetail-name {
+  margin-bottom: 40px;
+  color: #ec7532;
+  position: relative;
+}
