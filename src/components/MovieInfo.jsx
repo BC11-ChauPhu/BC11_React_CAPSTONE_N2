@@ -46,6 +46,7 @@ const MovieInfo = () => {
             setState(closestLogoItem.id)
         }
     }
+    console.log(state)
     return (
         <div id='movieDetail'>
             <div className="container">
@@ -73,11 +74,17 @@ const MovieInfo = () => {
                             <div className="movieDetail-showtimes">
                                 {info.heThongRapChieu?.map((item, index) => {
                                     if (item.maHeThongRap === state) {
-                                        console.log(item)
                                         return item.cumRapChieu?.map((item, index) => {
+                                            console.log(item)
                                             return (
-                                                <div>
-                                                    <img src={item.hinhAnh} alt="" />
+                                                <div className='showtimes-location'>
+                                                    <div className='showtimes-location-img'>
+                                                        <img src={item.hinhAnh} alt="" />
+                                                    </div>
+                                                    <div className="showtimes-info">
+                                                        <p className='cinema-name'>{item.tenCumRap}</p>
+                                                        <p>{item.diaChi}</p>
+                                                    </div>
                                                 </div>
                                             )
                                         })

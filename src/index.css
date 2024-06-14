@@ -429,5 +429,30 @@ footer li a i {
 
 .movieDetail-cinemas {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 20% 80%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.movieDetail-showtimes {
+  padding-left: 10px;
+}
+
+.showtimes-location {
+  display: grid;
+  grid-template-columns: 15% 80%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.showtimes-location-img {
+  width: 100%;
+  height: 100%;
+}
+
+.cinema-name {
+  margin-bottom: 0;
+  color: #ec7532;
 }
