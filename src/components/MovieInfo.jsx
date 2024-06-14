@@ -78,12 +78,24 @@ const MovieInfo = () => {
                                             console.log(item)
                                             return (
                                                 <div className='showtimes-location'>
-                                                    <div className='showtimes-location-img'>
-                                                        <img src={item.hinhAnh} alt="" />
+                                                    <div className="showtimes-info-wrapper">
+                                                        <div className='showtimes-location-img'>
+                                                            <img src={item.hinhAnh} alt="" />
+                                                        </div>
+                                                        <div className="showtimes-info">
+                                                            <p className='cinema-name'>{item.tenCumRap}</p>
+                                                            <p>{item.diaChi}</p>
+                                                        </div>
                                                     </div>
-                                                    <div className="showtimes-info">
-                                                        <p className='cinema-name'>{item.tenCumRap}</p>
-                                                        <p>{item.diaChi}</p>
+                                                    <div className="showtimes">
+                                                        <span><i class="fa-regular fa-clock"></i>Viewing Times:</span>
+                                                        <div className='showtimes-detail'>
+                                                            {item.lichChieuPhim?.map((item, index) => {
+                                                                return (
+                                                                    <span className=''>{item.ngayChieuGioChieu}</span>
+                                                                )
+                                                            })}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             )

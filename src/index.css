@@ -401,10 +401,11 @@ footer li a i {
   grid-template-columns: 35% 60%;
   gap: 20px;
   justify-content: space-between;
+  overflow: visible;
 }
 
 .movieDetail-img {
-  max-height: 700px;
+  max-height: 600px;
   max-width: 400px;
 }
 
@@ -439,12 +440,18 @@ footer li a i {
 }
 
 .showtimes-location {
-  display: grid;
-  grid-template-columns: 15% 80%;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.showtimes-info-wrapper {
+  display: grid;
+  grid-template-columns: 15% 80%;
+  justify-content: space-between;
 }
 
 .showtimes-location-img {
@@ -455,4 +462,25 @@ footer li a i {
 .cinema-name {
   margin-bottom: 0;
   color: #ec7532;
+}
+
+.showtimes {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+}
+
+.showtimes i {
+  margin-right: .5rem;
+}
+
+.showtimes-detail span {
+  text-wrap: wrap;
+  background: rgba(0, 0, 0, .8);
+  color: #fbbd61;
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 5px;
+  display: inline-block;
 }
