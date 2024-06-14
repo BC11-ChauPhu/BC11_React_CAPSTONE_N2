@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { http } from '../services/config'
+import { useNavigate } from 'react-router-dom'
 
 const ShowingMovies = () => {
+    const navigate = useNavigate()
     const [movie, setMovie] = useState([])
     let activeIndex = 0
     useEffect(() => {
@@ -40,7 +42,7 @@ const ShowingMovies = () => {
                                                 <p className='showingMovie-name'>{item.tenPhim}</p>
                                                 <p>{item.moTa}</p>
                                                 <p>Ratings: {item.danhGia}</p>
-                                                <button className='btn btn-primary'>Buy Ticket</button>
+                                                <button className='btn btn-light'>Buy Ticket</button>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +59,9 @@ const ShowingMovies = () => {
                                                 <p className='showingMovie-name'>{item.tenPhim}</p>
                                                 <p>{item.moTa}</p>
                                                 <p>Ratings: {item.danhGia}</p>
-                                                <button className='btn btn-primary'>Buy Ticket</button>
+                                                <button className='btn btn-light' onClick={() => {
+                                                    navigate(`/movie-detail/${item.maPhim}`)
+                                                }}>Details</button>
                                             </div>
                                         </div>
                                     </div>

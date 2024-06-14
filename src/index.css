@@ -483,4 +483,9 @@ footer li a i {
   border-radius: 8px;
   margin: 10px 5px;
   display: inline-block;
+  transition: .5s all;
+}
+
+.showtimes-detail span:hover {
+  color: #ec7532;
 }
